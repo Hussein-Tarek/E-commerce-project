@@ -5,6 +5,7 @@ const app = express();
 dotenv.config({path:'./config.env'});
 const userRouter = require('./routes/userRoutes');
 
+app.use(express.json());
 
 
 const port = 3000;
