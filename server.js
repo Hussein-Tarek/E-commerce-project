@@ -7,6 +7,7 @@ const userRouter = require("./routes/userRoutes");
 const dotenv = require("dotenv");
 const ApiError = require("./utils/ApiError");
 const globalErr = require("./middlewares/error");
+const { Server } = require("http");
 require("dotenv/config");
 dotenv.config({ path: "./config.env" });
 const port = process.env.PORT;
@@ -46,7 +47,8 @@ app.listen(port, () =>
 process.on("unhandledRejection", (err) => {
   console.log("UNHANDLED REJECTION! Shutting down...");
   console.log(err.name, err.message);
-  Server.close(() => {
-    process.exit(1);
-  });
+  // Server.close(() => {
+  //   console.log("Shutting down...");
+  //   process.exit(1);
+  // });
 });
