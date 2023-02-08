@@ -13,6 +13,18 @@ const productSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  category: {
+    type: String,
+  },
+  image: {
+    type: String,
+  },
+  rating: {
+    type: Number,
+  },
+  numReviews: {
+    type: Number,
+  },
 });
 
 const Product = mongoose.model("Product", productSchema);

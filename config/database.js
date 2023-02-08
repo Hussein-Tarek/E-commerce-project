@@ -8,10 +8,9 @@ const dbConnection = () => {
   //connect on db on atlas
   mongoose
     .connect(process.env.db_url)
-    .then((con) => console.log(`connected successfully ${con.connection.host}`))
-    .catch((err) => {
-      console.log(err);
-    });
+    .then((con) =>
+      console.log(`connected successfully ${con.connection.host}`)
+    );
 
   //connect on db locally
   // mongoose
